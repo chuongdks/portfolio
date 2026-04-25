@@ -21,7 +21,7 @@ export default function Layout({ children, theme, toggleTheme }) {
     <div className={`site-wrapper ${theme}`}>
       <header className="site-header">
         <Link to="/" className="logo-link">
-          <span className="logo-text">CP.</span>
+          <span className="logo-text">Chuong Pham Portfolio</span>
         </Link>
 
         <nav className="site-nav">
@@ -68,8 +68,8 @@ export default function Layout({ children, theme, toggleTheme }) {
           <span className="footer-logo">CP.</span>
           <p>© 2026 Chuong Pham · Built with React & Spring Boot</p>
           <div className="footer-links">
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/chuongdks" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/phchuong98/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
       </footer>
