@@ -11,11 +11,16 @@ export default function Layout({ children, theme, toggleTheme }) {
   }, [theme]);
 
   const navLinks = [
-    { to: '/',        label: 'Home'         },
-    { to: '/about',   label: 'About'        },
-    { to: '/hobbies', label: 'Hobbies'      },
-    { to: '/library', label: 'Steam Library'},
+    { to: '/',         label: 'Home'         },
+    { to: '/about',    label: 'About'        },
+    { to: '/hobbies',  label: 'Hobbies'      },
+    { to: '/projects', label: 'Projects'     },
+    { to: '/library',  label: 'Steam Library'},
   ];
+
+  // Treat /projects/:slug as still "on" the Projects nav item
+  const isActive = (to) =>
+    to === '/projects' ? location.pathname.startsWith('/projects') : location.pathname === to;
 
   return (
     <div className={`site-wrapper ${theme}`}>
@@ -30,7 +35,7 @@ export default function Layout({ children, theme, toggleTheme }) {
               <li key={to}>
                 <Link
                   to={to}
-                  className={`nav-link ${location.pathname === to ? 'active' : ''}`}
+                  className={`nav-link ${isActive(to) ? 'active' : ''}`}
                 >
                   {label}
                 </Link>

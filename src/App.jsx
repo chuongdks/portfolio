@@ -5,6 +5,8 @@ import Home from './components/home/Home';
 import About from './components/about/About';
 import Hobbies from './components/hobbies/Hobbies';
 import SteamLibrary from './components/steam/SteamLibrary';
+import Projects from './components/projects/Projects';
+import ProjectDetail from './components/projects/ProjectDetail';
 
 function App() {
   // Read saved preference; fall back to OS preference
@@ -26,10 +28,12 @@ function App() {
     <Router>
       <Layout theme={theme} toggleTheme={toggleTheme}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/hobbies" element={<Hobbies />} />
-          <Route path="/library" element={<SteamLibrary />} />
+          <Route path="/"               element={<Home />}          />
+          <Route path="/about"          element={<About />}         />
+          <Route path="/hobbies"        element={<Hobbies />}       />
+          <Route path="/projects"       element={<Projects />}      />
+          <Route path="/projects/:slug" element={<ProjectDetail />}/>
+          <Route path="/library"        element={<SteamLibrary />} />
         </Routes>
       </Layout>
     </Router>
